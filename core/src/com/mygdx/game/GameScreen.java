@@ -31,7 +31,6 @@ public class GameScreen implements Screen {
     private Rectangle middleRect;
     private Rectangle rightRect;
     private float scrolly;
-    private int puntos;
     private float ny;
 
     public float getScrolly() {
@@ -158,7 +157,6 @@ public class GameScreen implements Screen {
             while (iter.hasNext()) {
                 Platform platform = iter.next();
                 if (platform.getBounds().overlaps(player.getBounds())&& player.getY() >= platform.getY()+platform.getHeight()-20) {
-                    puntos++;
                     platformGround = platform;
                 }
 
@@ -179,7 +177,7 @@ public class GameScreen implements Screen {
 
         stage.act();
         game.batch.begin();
-        game.smallFont.draw(game.batch, "Score: " + (int) puntos, 20, 700);
+        game.smallFont.draw(game.batch, "Altura: " + (int) scrolly+ " metros", 20 , 700);
         game.batch.end();
 
 
